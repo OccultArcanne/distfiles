@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Crear directorios personales
-mkdir -p  ~/{.themes,usr/{share/{fonts,lib,env,scripts},bin,local,var,opt,etc,mnt,media,tmp}} && mkdir -p ~/usr/local/Suckless
+mkdir -p  ~/{.themes,usr/{share/{fonts,lib,env,scripts},bin,local,var,opt,etc,mnt,media,tmp}} && mkdir -p ~/usr/local/Suckless &&
 
 # Obtener archivos de red
 cd ~ &&
@@ -16,9 +16,12 @@ cd ~/usr/opt && wget https://github.com/Kron4ek/Conty/releases/download/1.21.11/
 ln -sf ~/usr/opt/conty.sh /usr/bin/conty && ln -sf ~/usr/opt/Obsidian-1.1.16.AppImage ~/usr/bin/Obsidian &&
 cd ~ && curl -o Xresources https://raw.githubusercontent.com/catppuccin/xresources/main/mocha.Xresources && mv Xresources .Xresources &&
 
-# Actualizar configuraciones si no he creado un repositorio para las mdificaciones a incluir
-#rsync -avhu --progress ~/usr/tmp/distfiles/share/ ~/usr/share/ &&
-
 # Instalar paquetes necesarios
 sudo xbps-install -S void-repo-nonfree util-linux bsdtar coreutils binutils libatomic-devel base-devel curl wget linux-firmware-amd dbus polkitd NetworkManager xtools git bat ripgrep fd exa procs helix neovim htop neofetch ntfs-3g p7zip dust fish-shell starship &&
-sudo xbps-install -Su
+sudo xbps-install -Su &&
+
+# Actualizar configuraciones si no he creado un repositorio para las mdificaciones a incluir
+mkdir -p ~/usr/share/wall &&
+rsync -avhu --progress ~/distfiles/wall ~/usr/share/wall &&
+rsync -avhu --progress ~/distfiles/env ~/usr/share/env &&
+mv ~/usr/share/env/bashrc ~/.bashrc &&
