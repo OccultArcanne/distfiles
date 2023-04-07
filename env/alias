@@ -1,0 +1,106 @@
+#---------------------------------#
+#-Original alias taken from sum4n-#
+#--------changes done to my conf--#
+#---------------------------------#
+
+# Aiuda
+alias aiuda='echo "ll es como ls, load_ procesos en mem o cpu, upd actualiza, inst instala, rpl debe ser usado en el directorio de void-packages para reemplazar apquetes con su version compilada, cprg quita los binarios del cache del instalador"'
+
+# directory alias
+alias ls='exa -aG --color=always --icons --group-directories-first'
+alias ll='exa -Glah --icons --group-directories-first'
+alias lt='exa -Glah --icons --group-directories-first --tree'
+
+# procs alias
+alias load_mem='procs --sortd mem | head -5'
+alias load_cpu='procs --sortd cpu | head -5'
+alias load_proc='procs --tree'
+
+#-----------------#
+#-Distro specific-#
+#-----------------#
+
+#---------        #
+#-------Void------#
+#         --------#
+
+#-------XBPS------#
+alias upd='sudo xbps-install -Su'
+alias inst='sudo xbps-install -S'
+alias rpl='sudo xbps-install --repository=hostdir/binpkgs -yf'
+alias cprg='sudo rm /var/cache/xbps/*'
+
+#-----Arch-------#
+
+#-------------#
+#---- Pacman
+#-------------#
+#alias update='sudo pacman -Syyu'
+#alias sync='sudo pacman -Syy'
+#alias install='sudo pacman -S'
+#Cleanup orphaned packages
+#alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+#alias remove='sudo pacman -Rns'
+
+# For when keys break
+#alias al-fk="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+
+
+#-------------#
+#---- git-----#
+#-------------#
+alias lg='lazygit'
+alias gcl='git clone'
+alias gin='git init'
+alias gad='git add'
+alias gcm='git commit -m'
+alias gp='git push'
+alias gst='git status'
+
+#merge new settings
+alias merge="xrdb -merge ~/.Xresources"
+
+#youtube download
+alias yta-aac="yt-dlp --extract-audio --audio-format aac "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta-flac="yt-dlp --extract-audio --audio-format flac "
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
+alias ytv-best="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4 "
+
+
+#EDITOR for important configuration files
+alias efstab="sudoedit /etc/fstab"
+alias ebsh="$EDITOR ~/.bashrc"
+alias ezsh="$EDITOR ~/.config/zsh/.zshrc"
+alias efish="$EDITOR ~/.config/fish/config.fish"
+
+#WM/DW
+alias chadwm='startx ~/.config/chadwm/scripts/run.sh'
+alias obx='startx /usr/bin/openbox --startup ~/.config/openbox/autostart'
+
+# # ex = EXtractor for all kinds of archives
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
