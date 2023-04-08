@@ -18,11 +18,11 @@ Please, don't use the pkgs in this repo, they are just for experimenting since -
 - wget
 
 # Usage
-in ~
-git clone https://github.com/OccultArcanne/distfiles.git
-cd distfiles/script
-sh strap.sh
-sh voidpkgs.sh
-compile pkgs listed in ../etc/packages.md
-install pkgs listed there
-xdg-users-dirs-update if wanted
+- in ~
+- git clone https://github.com/OccultArcanne/distfiles.git
+- cd distfiles/script
+- sh strap.sh
+- sh voidpkgs.sh
+- compile pkgs listed in ../etc/packages.md
+- install pkgs listed there
+- xdg-users-dirs-update if wanted
