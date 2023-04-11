@@ -25,13 +25,15 @@ alias load_proc='procs --tree'
 #         --------#
 
 #-------XBPS------#
-alias xupd='sudo xbps-install -Sduv'
-alias xinst='sudo xbps-install -S'
-alias xrpl='sudo xbps-install --repository=hostdir/binpkgs -yf'
-alias xsweep='sudo rm /var/cache/xbps/*'
-alias xsync='sudo xbps-install -S'
-alias xdep='sudo xbps-query -v -R -x'
-alias xclean='sudo xbps-remove -v -O'
+alias vpup='sudo xbps-install -Sduv'
+alias vpin='sudo xbps-install -S'
+alias vpre='sudo xbps-install --repository=hostdir/binpkgs -yf'
+alias vpsweep='sudo rm /var/cache/xbps/*'
+alias vpsync='sudo xbps-install -S'
+alias vpdep='sudo xbps-query -v -R -x'
+alias vpclean='sudo xbps-remove -v -O'
+alias vplist='xbps-query -v -l'
+alias vprf='xbps-remove -v -R'
 
 #-----Arch-------#
 
