@@ -4,7 +4,7 @@
 #---------------------------------#
 
 # Aiuda
-alias aiuda='echo "ll es como ls, load_ procesos en mem o cpu, upd actualiza, inst instala, rpl debe ser usado en el directorio de void-packages para reemplazar apquetes con su version compilada, cprg quita los binarios del cache del instalador"'
+alias aiuda='echo "ls ll lt: list files, load_ mem|cpu|proc, vpre debe ser usado en el directorio de void-packages para reemplazar apquetes con su version compilada, cprg quita los binarios del cache del instalador"'
 
 # directory alias
 alias ls='exa -aG --color=always --icons --group-directories-first'
@@ -25,6 +25,7 @@ alias load_proc='procs --tree'
 #         --------#
 
 #-------XBPS------#
+#-taken  from vpm-#
 alias vpup='sudo xbps-install -Sduv'
 alias vpin='sudo xbps-install -S'
 alias vpre='sudo xbps-install --repository=hostdir/binpkgs -yf'
