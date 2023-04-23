@@ -20,36 +20,11 @@ alias load_proc='procs --tree'
 #-Distro specific-#
 #-----------------#
 
-#---------        #
 #-------Void------#
-#         --------#
-
-#-------XBPS------#
-#-taken  from vpm-#
-alias vpup='sudo xbps-install -Sduv'
-alias vpin='sudo xbps-install -S'
-alias vpre='sudo xbps-install --repository=hostdir/binpkgs -yf'
-alias vpsweep='sudo rm /var/cache/xbps/*'
-alias vpsync='sudo xbps-install -S'
-alias vpdep='sudo xbps-query -v -R -x'
-alias vpclean='sudo xbps-remove -v -O'
-alias vplist='xbps-query -v -l'
-alias vprf='xbps-remove -v -R'
+source voidenv
 
 #-----Arch-------#
-
-#-------------#
-#---- Pacman
-#-------------#
-#alias update='sudo pacman -Syyu'
-#alias sync='sudo pacman -Syy'
-#alias install='sudo pacman -S'
-#Cleanup orphaned packages
-#alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-#alias remove='sudo pacman -Rns'
-
-# For when keys break
-#alias al-fk="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
+#source archenv
 
 
 #-------------#
