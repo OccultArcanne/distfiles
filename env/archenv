@@ -1,0 +1,12 @@
+#-------------#
+#---- Pacman
+#-------------#
+alias update='sudo pacman -Syyu'
+alias sync='sudo pacman -Syy'
+alias install='sudo pacman -S'
+#Cleanup orphaned packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias remove='sudo pacman -Rns'
+
+# For when keys break
+alias al-fk="sudo pacman-key --init && sudo pacman-key --populate archlinux && sudo pacman-key --refresh-keys"
