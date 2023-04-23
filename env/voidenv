@@ -1,0 +1,11 @@
+#-------XBPS------#
+#-taken  from vpm-#
+alias vpup='sudo xbps-install -Sduv'
+alias vpin='sudo xbps-install -S'
+alias vpre='sudo xbps-install --repository=hostdir/binpkgs -yf'
+alias vpsweep='sudo rm /var/cache/xbps/*'
+alias vpsync='sudo xbps-install -S'
+alias vpdep='sudo xbps-query -v -R -x'
+alias vpclean='sudo xbps-remove -v -O'
+alias vplist='xbps-query -v -l'
+alias vprf='xbps-remove -v -R'
